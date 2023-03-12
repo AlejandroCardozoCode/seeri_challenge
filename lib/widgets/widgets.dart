@@ -1,0 +1,10 @@
+export 'appbar_widget.dart';
+export 'buttons_gender_widget.dart';
+export 'carousel_movies_widget.dart';
+export 'custom_movie_appbar.dart';
+export 'movie_tag_widget.dart';
+export 'movies_genre_grid_widget.dart';
+export 'movies_post_widget.dart';
+export 'review_widget.dart';
+export 'movie_info_widget.dart';
+export 'search_bar_widget.dart';
