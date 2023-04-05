@@ -1,7 +1,7 @@
-# seeri_challenge
-Aquí se encuentra el código desarrollado para la nueva técnica 
+# Seeri Challenge
+Aquí se encuentra el código desarrollado para la prueba técnica 
 
-# capturas de la app
+# Capturas de la app
 ![app](https://user-images.githubusercontent.com/57674935/224557346-606efc46-2c15-47d8-b545-2c0842e8ba27.png)
 
 # Arquitectura y patrones
