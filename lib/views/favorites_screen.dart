@@ -13,10 +13,28 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(
       builder: (context, state) {
-        return MoviesGridWidget(
-          movies: state.favoriteMovies,
-        );
+        return child(state);
       },
+    );
+  }
+
+  Widget child(MoviesState state) {
+    if (state.favoriteMovies.isEmpty) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(
+            "Agrega una película a favoritos para verla aquí",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
+        ],
+      );
+    }
+    return MoviesGridWidget(
+      movies: state.favoriteMovies,
     );
   }
 }

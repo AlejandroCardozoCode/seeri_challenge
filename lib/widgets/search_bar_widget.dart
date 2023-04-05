@@ -23,6 +23,8 @@ class SearchBarWidget extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: ThemeApp.black_3,
+          hintText: "Ingresa el nombre de una película",
+          hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,

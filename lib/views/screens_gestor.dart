@@ -22,8 +22,8 @@ class _ScreensGestorState extends State<ScreensGestor> {
 
   final List<AppBarWidget> _appBars = [
     const AppBarWidget(
-      tittle: "Seeri-Movie",
-      useIcon: true,
+      tittle: "CineScope",
+      useIcon: false,
     ),
     const AppBarWidget(
       tittle: "Buscador",
@@ -31,7 +31,7 @@ class _ScreensGestorState extends State<ScreensGestor> {
     ),
     const AppBarWidget(
       tittle: "Favoritos",
-      useIcon: true,
+      useIcon: false,
     ),
   ];
 
