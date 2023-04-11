@@ -6,8 +6,20 @@ import 'package:seeri/bloc/movies/movies_state.dart';
 import '../bloc/movies/movies_bloc.dart';
 import '../views/view.dart';
 
-class CarouselMoviesWidget extends StatelessWidget {
+class CarouselMoviesWidget extends StatefulWidget {
   const CarouselMoviesWidget({super.key});
+
+  @override
+  State<CarouselMoviesWidget> createState() => _CarouselMoviesWidgetState();
+}
+
+class _CarouselMoviesWidgetState extends State<CarouselMoviesWidget> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    BlocProvider.of<MoviesBloc>(context).add(Featured());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +33,7 @@ class CarouselMoviesWidget extends StatelessWidget {
               autoplay: true,
               viewportFraction: 0.8,
               scale: 0.9,
+              physics: BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {

@@ -11,10 +11,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<MoviesBloc>(context).add(Featured());
-    BlocProvider.of<MoviesBloc>(context).add(Genres());
-    BlocProvider.of<MoviesBloc>(context).add(GenreMovies());
-    BlocProvider.of<MoviesBloc>(context).add(RecoverFavorites());
     return Column(
       children: [
         const CarouselMoviesWidget(),

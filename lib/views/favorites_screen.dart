@@ -7,8 +7,21 @@ import '../bloc/movies/movies_bloc.dart';
 import '../bloc/movies/movies_state.dart';
 import '../widgets/movies_genre_grid_widget.dart';
 
-class FavoritesScreen extends StatelessWidget {
+class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
+
+  @override
+  State<FavoritesScreen> createState() => _FavoritesScreenState();
+}
+
+class _FavoritesScreenState extends State<FavoritesScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    BlocProvider.of<MoviesBloc>(context).add(RecoverFavorites());
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(

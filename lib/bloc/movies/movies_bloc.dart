@@ -43,6 +43,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
           MovieModel newMovie = MovieModel.fromJson(item);
           newMovies.add(newMovie);
         }
+        log("Numero de featured" + state.featuredList.length.toString());
         emit(state.copyWith(featuredList: newMovies));
       } else {
         log('Request failed with status: ${response.statusCode}.');
@@ -94,7 +95,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
           MovieModel newMovie = MovieModel.fromJson(item);
           newMovies.add(newMovie);
         }
-        log(state.searchResult.length.toString());
+        log("Numero de buscadas" + state.searchResult.length.toString());
         emit(state.copyWith(searchResult: newMovies));
       } else {
         log('Request failed with status: ${response.statusCode}.');
@@ -117,7 +118,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
             newReviews.add(newReview);
           }
         }
-        log(state.searchResult.length.toString());
+        log("Numero de reviews" + state.searchResult.length.toString());
         emit(state.copyWith(movieReviews: newReviews));
       } else {
         log('Request failed with status: ${response.statusCode}.');
@@ -134,7 +135,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
         newFavorites.add(event.movie);
         List<String> favoriteMoviesStringList = sharedServices.listToJsonList(newFavorites).map((e) => json.encode(e)).toList();
         await prefs.setStringList('favoriteMoviesStringList', favoriteMoviesStringList);
-        log(state.favoriteMovies.length.toString());
+        log("Numero de favoritas" + state.favoriteMovies.length.toString());
         emit(state.copyWith(
           favoriteMovies: newFavorites,
           favoriteMoviesStringList: favoriteMoviesStringList,
@@ -144,7 +145,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
         newFavorites.remove(event.movie);
         List<String> favoriteMoviesStringList = sharedServices.listToJsonList(newFavorites).map((e) => json.encode(e)).toList();
         await prefs.setStringList('favoriteMoviesStringList', favoriteMoviesStringList);
-        log(state.favoriteMovies.length.toString());
+        log("Numero de buscadas" + state.favoriteMovies.length.toString());
         emit(state.copyWith(
           favoriteMovies: newFavorites,
           favoriteMoviesStringList: favoriteMoviesStringList,
